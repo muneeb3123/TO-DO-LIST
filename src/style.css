@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+.check {
+  height: 100%;
+  padding: 0 3%;
+}
+
+body {
+  background-color: #ececec;
+  overflow-x: hidden;
+}
+
+header ul li {
+  margin: 0 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.217), inset 0 0 10px rgba(0, 0, 0, 0);
+  padding: 5px 15px;
+  font-weight: 600;
+  border-radius: 7px;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-heading {
+  font-weight: 400;
+  font-size: 17px;
+  margin-left: 30px;
+}
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  --font-family-styled: "Sacramento", cursive;
+  --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849),
+    5px 5px 9px rgba(94, 104, 121, 0.3);
+  --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647),
+    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 10px 70px;
+  box-shadow: var(--Box-shadow-outside);
+}
+
+.time {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 900;
+}
+
+.main-heading {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.main-lists {
+  margin: 0 3%;
+  padding: 10px 50px;
+  box-shadow: var(--Box-shadow-outside);
+  height: 50vh;
+  overflow: auto;
+}
+
+.lists-header {
+  display: flex;
+  gap: 20%;
+}
+
+.bold {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.white {
+  background-color: #f5f5f5;
+}
+
+footer {
+  margin: 3% 0;
+  padding: 4px;
+  color: #fff;
+  background-color: #1d1d1d;
+}
+
+.new-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 72vh;
+}
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form {
+  box-shadow: var(--Box-shadow-outside);
+  padding: 60px 100px;
+  border-radius: 7px;
+  background-color: #fcfcfcaf;
+}
+
+form input {
+  outline: none;
+  padding: 7px 20px;
+  font-size: 16px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.085);
+  margin-bottom: 15px;
+  border: 2px solid rgba(86, 255, 35, 0);
+  transition: 0.3s ease-in-out;
+}
+
+form button {
+  background-color: rgb(87, 255, 35);
+  padding: 10px 10px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.contact-container {
+  box-shadow: var(--Box-shadow-outside);
+  height: 40vh;
+  padding: 10px 10% 0 30px;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.RemoveButton {
+  background-color: #ff5c5c;
+  box-shadow: 0 0 10px #ff5c5c;
+  color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.display-none {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.addNewSelected {
+  background-color: rgb(87, 255, 35);
+  color: white;
+}
+
+.contactSelected {
+  background-color: rgb(95, 95, 95);
+  color: white;
+}
+
+.listSelected {
+  background-color: rgb(53, 137, 255);
+  color: white;
+}

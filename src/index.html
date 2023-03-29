@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <title>To Do list</title>
-  </head>
-  <body>
-    <div class="to-do-container">
-      <!-- Header section -->
-      <article class="to-do-header">
-        <h1 class="to-do-heading">Today's To Do List</h1>
-        <span class="fa fa-sync-alt"></span>
-      </article>
-
-      <!-- Form -->
-      <article>
-        <form class="to-do-form" action="submit">
-          <input
-            id="new-item"
-            class="to-do-add"
-            type="text"
-            placeholder="Add your task ..."
-          />
-          <input
-            id="submit-new-item"
-            type="submit"
-            value
-            title="click this or press enter to submit"
-          />
-        </form>
-      </article>
-
-      <!-- To do list -->
-      <ul id="to-do-list"></ul>
-
-      <!-- Clear completed button -->
-      <button class="clear-completed">Clear all completed</button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="check">
+        <header>
+            <div class="header-items">
+                <h1 class="nav-heading">
+                   Awesome books 
+                </h1>
+            </p>
+            <ul class="heading-lists">
+                <li class="lists list-link">List</li>
+                <li class="lists Add-link">Add New</li>
+                <li class="lists Contact-link">Contact</li>
+            </ul>
+        </header>
+        <section class="time">
+            <div class="showTime"></div>
+        </section>
+        <section class="show-list">
+        <div class="main">
+            <h1 class="main-heading">
+                All Awesome Books
+            </h1>
+            <div class="main-lists">
+                <span class="lists-header">
+                    <p class="title-header bold">Title</p>
+                    <p class="author-header bold">Author</p>
+                </span>
+                <div id="bookList"></div>
+            </div>
+        </div>
+    </section>
+    <section class="add-new  display-none">
+        <div class="new-container">
+            <h1 class="main-heading">
+                Add new Books
+            </h1>
+            <form class="new-form">
+                <input type="text" id="title" placeholder="Title">
+                <input type="text" id="author" placeholder="Author">
+                <button type="button" id="addBtn">Add</button>
+            </form>
+        </div>
+    </section>
+    <section class="contact display-none">
+        <div class="contact-information new-container">
+            <h1 class="mean-heading">
+                Contact Information
+            </h1>
+            <div class="contact-container">
+                <p class="question">
+                    Do you have any questions or you just want to say "Hello"?
+You can reach out to us !
+                </p>
+                <p class="contact-link">
+                    Muneeb -ur Rehman </br>
+rehmanmuneeb66@gmail.com
+                </p>
+            </div>
+        </div>
+    </section>
     </div>
-  </body>
+    <footer>
+        <p class="footer-content">@ MIT LICENSE</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
 </html>
