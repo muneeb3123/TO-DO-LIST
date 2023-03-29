@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.configure.js",
-    "start": "webpack-dev-server --config webpack.configure.js --open"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js --open"
   },
   "keywords": [],
   "author": "",
