@@ -9,7 +9,7 @@ module.exports = merge(common, {
     static: './dist',
   },
   output: {
-    filename: 'main.[contenthash].js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [new CleanWebpackPlugin()],
