@@ -10,7 +10,7 @@ jobs:
     name: Lighthouse
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.5.2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: "18.x"
@@ -22,7 +22,7 @@ jobs:
     name: Webhint
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.5.2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: "18.x"
@@ -36,7 +36,7 @@ jobs:
     name: Stylelint
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.5.2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: "18.x"
@@ -50,10 +50,10 @@ jobs:
     name: ESLint
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.5.2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "18.15.0"
+          node-version: "18.x"
       - name: Setup ESLint
         run: |
           npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
@@ -64,7 +64,7 @@ jobs:
     name: node_modules checker
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2.5.2
+      - uses: actions/checkout@v2
       - name: Check node_modules existence
         run: |
           if [ -d "node_modules/" ]; then echo -e "\e[1;31mThe node_modules/ folder was pushed to the repo. Please remove it from the GitHub repository and try again."; echo -e "\e[1;32mYou can set up a .gitignore file with this folder included on it to prevent this from happening in the future." && exit 1; fi
