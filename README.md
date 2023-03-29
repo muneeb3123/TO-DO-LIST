@@ -21,23 +21,29 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Protfolio-project] <a name="about-project"></a>
+# 📖 To Do list <a name="about-project"></a>
 
-In this project I create webpack server which shows my dynamically created lists in live server and also manage it.
+**To Do list** is a project to build a simple HTML list of To Do tasks.
 
-## 🛠 Built With <a name="visual studio">HTML5</a>
+## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Client</summary>
+  <summary>Markup</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://html5.org/">HTML5</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Interaction</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
   </ul>
 </details>
 
@@ -45,18 +51,15 @@ In this project I create webpack server which shows my dynamically created lists
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-- **It has javascript es6**
--**It has arrow functions**
--**It has javascript Classes**
+- **Easy navigation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="protfolio-project"></a>
- 
-N/A
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- This project is not yet deployed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,44 +70,80 @@ N/A
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
-In order to run this project you need:
 
-Step 1: if you don't have git installed on your machine you can download it from [here](https://git-scm.com/downloads).
+In order to run this project you need an IDE such as VS code, sublime, atom e.t.c:
 
-Once you have git installed on your machine you can clone your project by running the command below to clone your project to your local machine
+### Setup
 
+Clone this repository to your desired folder:
 
-`git clone https://github.com/muneeb3123/Project-1.git`
+Example commands:
 
-Alternatively, you can download the zip file of your project by clicking on the `Code` button on the right side of your project page and clicking on `Download ZIP`
+```sh
+ $ cd my-folder
+ $ git clone git@github.com:mutugi-c/awesome-books.git
+```
 
-Step 2: Locate the folder where you cloned your project to and open the `index.html` file in your browser to view your project.
+### Install
+
+Install git to work on this project with:
+
+```sh
+   $ git config --global user.name "First Last"
+
+   $ git config --global user.email "example@example.com"
+```
+
+### Usage
+
+To run the project have Node.js installed, execute the following command:
+
+```sh
+  $ npm install http-server -g
+  $ http-server
+```
+
+Go to your browser and type localhost:8080. Your Application should run
+
+### Run tests
+
+To run tests, run the HTML document in Google Chrome and right-click the HTML element you want to inspect. Click on "Inspect" and you will have the tools to run, analyze, and even debug the code
+
+### Deployment
+
+You can deploy this project using build tools such as webpack, Rollup, Parcel, e.t.c or even deploy using Github pages:
+
+Example: To build for production with parcel, use the folowing commands:
+
+- Initialise npm package
+- Install parcel
+- Build for production
+
+```sh
+ $ npm init -y
+ $ npm i -g parcel-bundler
+ $ parcel build index.html
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
-👤 **Muneeb UR Rehman**
+👤 **Chris Mutugi**
 
-- GitHub: [@muneeb3123](https://github.com/muneeb3123)
-- Twitter: [@Hafizabd4](https://twitter.com/Hafizabd4)
-- LinkedIn: (https://www.linkedin.com/in/muneeb-rehman-01b6bb193/)
-
+- GitHub: [@mutugi-c](https://github.com/mutugi-c)
+- Twitter: [@chris\_\_mutugi](https://twitter.com/chris__mutugi)
+- LinkedIn: [chris-mutugi](https://www.linkedin.com/in/chris-mutugi-46594b123/)
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-- **More detailed**
-- **Master Javascript**
-- **Master webpack server**
--**improve javascript modules knownledge**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-## 📼 Project Walkthrough <a name="project-walk"></a>
+> Future features that will be added to the project include:
 
-- currently I dont have.
+- **An improved user interface**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,8 +160,8 @@ Feel free to check the [issues page](../../issues/).
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
-**please show your support to improve my skills .this will help me to work hard**
-Give a ⭐️ if you like this project!
+
+If you like this project, give a ⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,15 +169,14 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-"Special thanks to my coding partner "Chris Mutugi " for their invaluable contributions to this project. Their dedication, skills, and collaborative spirit were essential to our success."
+I would like to thank [Microverse](https://www.microverse.org/go?utm_source=google&utm_medium=paid&utm_campaign=search_europe&gclid=CjwKCAjwq-WgBhBMEiwAzKSH6IxBgyh61fi4WRuQvUsaGigJMuzzc9177uC6mhMwXeriUDendiuvChoC20wQAvD_BwE) for the opportunity work on this project.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./license.md) licensed.
-
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Typograpphy */
+body {
+  background-color: bisque;
+  color: #545862;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+/* Container */
+.to-do-container {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 300px;
+  margin: 250px auto;
+  width: 350px;
+}
+
+/* Heading */
+.to-do-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Form */
+.to-do-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem 0 1rem;
+}
+
+.to-do-add {
+  border: 0;
+  font-style: italic;
+}
+
+/* List */
+.to-do-item {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 3fr 25fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Buttons */
+.check-button {
+  background-color: transparent;
+  border: 2px solid #c1c1c3;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  transition: border 0.3s;
+}
+
+.check-button:hover {
+  border: 2px solid #808080;
+}
+
+.clear-completed {
+  border: 0;
+  cursor: pointer;
+  padding: 1rem;
+  opacity: 0.5;
+  width: 100%;
+}
+
+/* Icon check */
+.fa-check {
+  color: #5490ffda;
+  display: none;
+}
+
+/* Vertical ellipsis */
+.fa-ellipsis-v {
+  color: #c1c1c3;
+  transition: all 0.5s;
+}
+
+.fa-ellipsis-v:hover {
+  cursor: move;
+  opacity: 0.3;
+}
+
+/* Task description */
+.task-description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
