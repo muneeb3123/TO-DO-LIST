@@ -1,33 +1,37 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "to-do_list",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "<a name=\"readme-top\"></a>",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mutugi-c/Webpack-boilerplate.git"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js --open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mutugi-c/Webpack-boilerplate/issues"
-  },
-  "homepage": "https://github.com/mutugi-c/Webpack-boilerplate#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
-    "html-webpack-plugin": "^5.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "hint": "^7.1.7",
+    "lighthouse": "^10.1.0",
+    "mini-css-extract-plugin": "^2.7.5",
     "style-loader": "^3.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-merge": "^5.8.0"
   }
 }
