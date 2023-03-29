@@ -18,6 +18,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
     "hint": "^7.1.7",
+    "lighthouse": "^10.1.0",
     "mini-css-extract-plugin": "^2.7.5",
     "style-loader": "^3.3.2",
     "stylelint": "^13.13.1",
