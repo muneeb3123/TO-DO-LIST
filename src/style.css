@@ -56,6 +56,10 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.hidden {
+  display: none;
+}
+
 .check-button {
   background-color: transparent;
   border: 2px solid #c1c1c3;
