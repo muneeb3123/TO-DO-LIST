@@ -46,7 +46,7 @@ export class ToDoList {
     this.collection.forEach((task, index) => {
       const taskElement = `
         <li class='to-do-item'>
-          <input class='check-button' type='checkbox'>
+          <input class='check-button' type='checkbox' ${task.completed ? 'checked' : ''}>
           <span class='task-description' data-index='${index}'>${task.description}</span>
           <span class='fas fa-ellipsis-v menu-icon' data-index='${index}'></span>
           <span class='fas fa-trash remove-icon hidden' data-index='${index}'></span>
@@ -79,7 +79,23 @@ export class ToDoList {
         removeIcon.classList.remove('hidden');
       });
     });
-
+    const checkBtn = document.querySelectorAll('.check-button');
+    checkBtn.forEach((event) => {
+      event.addEventListener('change', () => {
+        const index = parseInt(event.parentNode.querySelector('.menu-icon').dataset.index, 10);
+        const task = this.collection[index];
+        task.completed = event.checked;
+        localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+        this.renderTasks();
+      });
+    });
+    const clearAll = document.querySelector('.clear-completed');
+    clearAll.addEventListener('click', () => {
+      this.collection = this.collection.filter((task) => !task.completed);
+      localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+      this.updateIndex();
+      this.renderTasks();
+    });
     const deleteIcons = document.querySelectorAll('.remove-icon');
     deleteIcons.forEach((deleteIcon) => {
       deleteIcon.addEventListener('click', () => {
