@@ -3,7 +3,7 @@ import { form, input } from './link.js';
 export const menuIcons = document.querySelectorAll('.menu-icon');
 export class ToDoList {
   constructor() {
-    this.collection = JSON.parse(localStorage.getItem('bookCollection')) || [];
+    this.collection = JSON.parse(localStorage.getItem('taskCollection')) || [];
     if (!Array.isArray(this.collection) || this.collection.length === 0) {
       this.collection = [];
     }
@@ -22,20 +22,21 @@ export class ToDoList {
       index: this.updateIndex(),
     };
     this.collection.push(newTask);
-    localStorage.setItem('bookCollection', JSON.stringify(this.collection));
+    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
     this.renderTasks();
   };
 
   removeBook = (index) => {
     this.collection[index].markedForDeletion = true;
     this.collection = this.collection.filter((task, i) => i !== index);
-    localStorage.setItem('bookCollection', JSON.stringify(this.collection));
+    this.updateIndex();
+    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
     this.renderTasks();
   };
 
   editBook = (index, newDescription) => {
     this.collection[index].description = newDescription;
-    localStorage.setItem('bookCollection', JSON.stringify(this.collection));
+    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
     this.renderTasks();
   };
 
