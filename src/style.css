@@ -14,6 +14,7 @@ body {
   padding: 10px 0;
   margin: 200px auto;
   background-color: #fff;
+  width: 350px;
 }
 
 .clear-completed {
