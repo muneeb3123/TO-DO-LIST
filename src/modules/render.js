@@ -26,7 +26,6 @@ export class ToDoList {
   };
 
   removeBook = (index) => {
-    this.collection[index].markedForDeletion = true;
     this.collection = this.collection.filter((task, i) => i !== index);
     this.updateIndex();
     localStorage.setItem('taskCollection', JSON.stringify(this.collection));
