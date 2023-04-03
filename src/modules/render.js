@@ -1,6 +1,5 @@
 import { form, input } from './link.js';
 
-export const menuIcons = document.querySelectorAll('.menu-icon');
 export class ToDoList {
   constructor() {
     this.collection = JSON.parse(localStorage.getItem('taskCollection')) || [];
@@ -46,9 +45,9 @@ export class ToDoList {
     this.collection.forEach((task, index) => {
       const taskElement = `
         <li class='to-do-item'>
-          <input class='check-button' type='checkbox' ${task.completed ? 'checked' : ''}>
+          <input class='check-button'  data-index='${index}' type='checkbox' ${task.completed ? 'checked' : ''}>
           <span class='task-description' data-index='${index}'>${task.description}</span>
-          <span class='fas fa-ellipsis-v menu-icon' data-index='${index}'></span>
+          <span class='fas fa-ellipsis-v menu-icon' data-mine='${index}'></span>
           <span class='fas fa-trash remove-icon hidden' data-index='${index}'></span>
         </li>
       `;
@@ -56,33 +55,42 @@ export class ToDoList {
     });
 
     const menuIcons = document.querySelectorAll('.menu-icon');
+
     menuIcons.forEach((menuIcon) => {
       menuIcon.addEventListener('click', () => {
-        const index = parseInt(menuIcon.dataset.index, 10);
-        const taskDescription = document.querySelector(
-          `[data-index='${index}'].task-description`,
-        );
-        const removeIcon = document.querySelector(
-          `[data-index='${index}'].remove-icon`,
-        );
+        // Get the index, task description, and remove icon associated with the menu icon
+        const index = parseInt(menuIcon.dataset.mine, 10);
+        const taskDescription = document.querySelector(`[data-index='${index}'].task-description`);
+        const removeIcon = document.querySelector(`[data-index='${index}'].remove-icon`);
+    
+        // Get the current task description and replace it with an empty input field
         const currentDescription = taskDescription.innerHTML;
         taskDescription.innerHTML = '';
         const inputField = document.createElement('input');
+        inputField.classList.add('add-list');
         inputField.value = currentDescription;
-        inputField.addEventListener('blur', () => {
-          const newDescription = inputField.value;
-          taskDescription.innerHTML = newDescription;
-          this.editBook(index, newDescription);
-        });
+        
+        // Append the input field to the task description, set focus on it, and update the menu and remove icons
         taskDescription.appendChild(inputField);
+        inputField.focus();
         menuIcon.classList.add('hidden');
         removeIcon.classList.remove('hidden');
+    
+        // When the user hits the "Enter" key, update the task description and call the editBook function
+        inputField.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            const newDescription = inputField.value;
+            taskDescription.innerHTML = newDescription;
+            this.editBook(index, newDescription);
+          }
+        });
       });
     });
+    
     const checkBtn = document.querySelectorAll('.check-button');
     checkBtn.forEach((event) => {
       event.addEventListener('change', () => {
-        const index = parseInt(event.parentNode.querySelector('.menu-icon').dataset.index, 10);
+        const index = parseInt(event.dataset.index, 10);
         const task = this.collection[index];
         task.completed = event.checked;
         localStorage.setItem('taskCollection', JSON.stringify(this.collection));
