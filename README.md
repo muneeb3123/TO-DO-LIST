@@ -56,7 +56,7 @@ In this project I create webpack server which shows my dynamically created lists
 
 ## 🚀 Live Demo <a name="protfolio-project"></a>
  
-https://muneeb3123.github.io/TO-DO-LIST/dist/
+https://chic-dango-8f4fa7.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
