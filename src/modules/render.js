@@ -21,20 +21,20 @@ export class ToDoList {
       index: this.updateIndex(),
     };
     this.collection.push(newTask);
-    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+    this.updateLocalStorage();
     this.renderTasks();
   };
 
   removeBook = (index) => {
-    this.collection = this.collection.filter((task, i) => i !== index);
+    this.collection = this.collection.filter((task, index1) => index1 !== index);
     this.updateIndex();
-    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+    this.updateLocalStorage();
     this.renderTasks();
   };
 
   editBook = (index, newDescription) => {
     this.collection[index].description = newDescription;
-    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+    this.updateLocalStorage();
     this.renderTasks();
   };
 
@@ -99,7 +99,7 @@ export class ToDoList {
     const clearAll = document.querySelector('.clear-completed');
     clearAll.addEventListener('click', () => {
       this.collection = this.collection.filter((task) => !task.completed);
-      localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+     this.updateLocalStorage();
       this.updateIndex();
       this.renderTasks();
     });
@@ -111,6 +111,10 @@ export class ToDoList {
       });
     });
   };
+
+   updateLocalStorage = () => {
+     localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+  }
 
   updateIndex() {
     this.collection.forEach((element, index) => {
