@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { form, input } from './link.js';
 
 export class ToDoList {
@@ -7,11 +8,11 @@ export class ToDoList {
       this.collection = [];
     }
     this.renderTasks();
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      this.addBook(input.value);
-      input.value = '';
-    });
+    // form.addEventListener('submit', (event) => {
+    //   event.preventDefault();
+    //   this.addBook(input.value);
+    //   input.value = '';
+    // });
   }
 
   addBook = (Description) => {
@@ -61,21 +62,21 @@ export class ToDoList {
         const index = parseInt(menuIcon.dataset.mine, 10);
         const taskDescription = document.querySelector(`[data-index='${index}'].task-description`);
         const removeIcon = document.querySelector(`[data-index='${index}'].remove-icon`);
-    
+
         // Get the current task description and replace it with an empty input field
         const currentDescription = taskDescription.innerHTML;
         taskDescription.innerHTML = '';
         const inputField = document.createElement('input');
         inputField.classList.add('add-list');
         inputField.value = currentDescription;
-        
-        // Append the input field to the task description, set focus on it, and update the menu and remove icons
+
+        // Append the input field to the task description
         taskDescription.appendChild(inputField);
         inputField.focus();
         menuIcon.classList.add('hidden');
         removeIcon.classList.remove('hidden');
-    
-        // When the user hits the "Enter" key, update the task description and call the editBook function
+
+        // When the user hits the "Enter" key, update the task description
         inputField.addEventListener('keydown', (event) => {
           if (event.key === 'Enter') {
             const newDescription = inputField.value;
@@ -85,7 +86,7 @@ export class ToDoList {
         });
       });
     });
-    
+
     const checkBtn = document.querySelectorAll('.check-button');
     checkBtn.forEach((event) => {
       event.addEventListener('change', () => {
@@ -96,13 +97,13 @@ export class ToDoList {
         this.renderTasks();
       });
     });
-    const clearAll = document.querySelector('.clear-completed');
-    clearAll.addEventListener('click', () => {
-      this.collection = this.collection.filter((task) => !task.completed);
-     this.updateLocalStorage();
-      this.updateIndex();
-      this.renderTasks();
-    });
+    // const clearAll = document.querySelector('.clear-completed');
+    // clearAll.addEventListener('click', () => {
+    //   this.collection = this.collection.filter((task) => !task.completed);
+    //   this.updateLocalStorage();
+    //   this.updateIndex();
+    //   this.renderTasks();
+    // });
     const deleteIcons = document.querySelectorAll('.remove-icon');
     deleteIcons.forEach((deleteIcon) => {
       deleteIcon.addEventListener('click', () => {
@@ -114,12 +115,13 @@ export class ToDoList {
 
    updateLocalStorage = () => {
      localStorage.setItem('taskCollection', JSON.stringify(this.collection));
-  }
+   }
 
-  updateIndex() {
-    this.collection.forEach((element, index) => {
-      element.index = index + 1;
-    });
-    return this.collection.length + 1;
-  }
+   updateIndex() {
+     this.collection.forEach((element, index) => {
+       element.index = index + 1;
+     });
+     return this.collection.length + 1;
+   }
 }
+module.exports = ToDoList;

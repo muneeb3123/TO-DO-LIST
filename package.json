@@ -4,9 +4,9 @@
   "description": "<a name=\"readme-top\"></a>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js --open"
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "eslint-plugin-import": "^2.27.5",
     "hint": "^7.1.7",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "lighthouse": "^10.1.0",
     "mini-css-extract-plugin": "^2.7.5",
     "style-loader": "^3.3.2",
@@ -34,6 +35,8 @@
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "jsdom": "^21.1.1",
+    "text-encoding": "^0.7.0",
     "webpack-merge": "^5.8.0"
   }
 }
