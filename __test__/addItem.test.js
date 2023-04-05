@@ -22,7 +22,7 @@ describe('toDoList', () => {
     });
   });
 
-  test('remove item from list, when clicking the trash icon', () => {
+  test('remove item from list', () => {
     todoItem.addBook(Taskdescription);
     const bookIndex = todoItem.collection[0].index;
     todoItem.removeBook(bookIndex);
