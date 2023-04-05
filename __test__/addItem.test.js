@@ -2,6 +2,7 @@ import ToDoList from '../src/modules/render.js';
 
 describe('toDoList', () => {
   let todoItem;
+  const Taskdescription = 'something';
 
   beforeAll(() => {
     document.body.innerHTML = '<ul id="to-do-list"></ul>';
@@ -12,7 +13,6 @@ describe('toDoList', () => {
   });
 
   test('add description', () => {
-    const Taskdescription = 'something';
     todoItem.addBook(Taskdescription);
 
     expect(todoItem.collection).toContainEqual({
@@ -22,7 +22,10 @@ describe('toDoList', () => {
     });
   });
 
-  test(()=> {
-    
-  })
+  test('remove item from list, when clicking the trash icon', () => {
+    todoItem.addBook(Taskdescription);
+    const bookIndex = todoItem.collection[0].index;
+    todoItem.removeBook(bookIndex);
+    expect(todoItem.collection[bookIndex]).toBeFalsy();
+  });
 });
