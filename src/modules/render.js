@@ -6,12 +6,6 @@ export class ToDoList {
     if (!Array.isArray(this.collection) || this.collection.length === 0) {
       this.collection = [];
     }
-    this.renderTasks();
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      this.addBook(input.value);
-      input.value = '';
-    });
   }
 
   addBook = (Description) => {
@@ -22,7 +16,6 @@ export class ToDoList {
     };
     this.collection.push(newTask);
     this.updateLocalStorage();
-    this.renderTasks();
   };
 
   removeBook = (index) => {
@@ -116,10 +109,23 @@ export class ToDoList {
      localStorage.setItem('taskCollection', JSON.stringify(this.collection));
   }
 
+  bindEvents = () => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.addBook(input.value);
+      input.value = '';
+      this.renderTasks();
+    });
+  }
+
   updateIndex() {
     this.collection.forEach((element, index) => {
       element.index = index + 1;
     });
     return this.collection.length + 1;
+  }
+  init() {
+    this.bindEvents();
+    this.renderTasks();
   }
 }
