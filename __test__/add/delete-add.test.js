@@ -31,6 +31,7 @@ describe('ToDoList', () => {
 
   test('add description', () => {
     todoItem.addBook(Taskdescription);
+    const listElement = document.getElementById('to-do-list').firstElementChild;
 
     expect(todoItem.collection).toContainEqual({
       description: Taskdescription,
@@ -40,6 +41,9 @@ describe('ToDoList', () => {
 
     expect(todoItem.collection.length).toBeGreaterThan(0);
     expect(window.localStorage.setItem).toHaveBeenCalledWith('taskCollection', JSON.stringify(todoItem.collection));
+    expect(listElement.tagName).toBe('LI');
+    expect(listElement.textContent.trim()).toBe(Taskdescription);
+    expect(listElement.classList).not.toContain('completed');
   });
 
   test('remove item from list', () => {
@@ -48,5 +52,9 @@ describe('ToDoList', () => {
     expect(todoItem.collection).toEqual([]);
     expect(todoItem.removeBook(0)).toBeFalsy();
     expect(window.localStorage.setItem).toHaveBeenCalledWith('taskCollection', JSON.stringify(todoItem.collection));
+
+    // removed dom elements
+    const listElement = document.getElementById('to-do-list').firstElementChild;
+    expect(listElement).toBe(null);
   });
 });
