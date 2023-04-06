@@ -1,5 +1,4 @@
-import { form, input } from './link.js';
-
+import { form,input } from "./link";
 export class ToDoList {
   constructor() {
     this.collection = JSON.parse(localStorage.getItem('taskCollection')) || [];

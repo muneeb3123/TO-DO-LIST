@@ -20,6 +20,7 @@
     "eslint-plugin-import": "^2.27.5",
     "hint": "^7.1.7",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "lighthouse": "^10.1.0",
     "mini-css-extract-plugin": "^2.7.5",
     "style-loader": "^3.3.2",
@@ -30,6 +31,9 @@
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0",
