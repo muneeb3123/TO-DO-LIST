@@ -27,10 +27,12 @@ describe('ToDoList', () => {
       completed: false,
       index: expect.any(Number),
     });
+    expect(todoItem.collection.length).toBeGreaterThan(0);
   });
 
   test('remove item from list', () => {
     todoItem.removeBook(0);
     expect(todoItem.collection).toEqual([]);
+    expect(todoItem.removeBook(0)).toBeFalsy();
   });
 });
