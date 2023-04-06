@@ -1,4 +1,6 @@
+// import { clearAllButton } from './checkBtn.js';
 import { form, input } from './link.js';
+import clearCompletedEvent from './checkBtn.js';
 
 class ToDoList {
   constructor() {
@@ -97,13 +99,6 @@ class ToDoList {
         this.renderTasks();
       });
     });
-    const clearAll = document.querySelector('.clear-completed');
-    clearAll.addEventListener('click', () => {
-      this.collection = this.collection.filter((task) => !task.completed);
-      this.updateLocalStorage();
-      this.updateIndex();
-      this.renderTasks();
-    });
     const deleteIcons = document.querySelectorAll('.remove-icon');
     deleteIcons.forEach((deleteIcon) => {
       deleteIcon.addEventListener('click', () => {
@@ -124,19 +119,27 @@ class ToDoList {
       input.value = '';
       this.renderTasks();
     });
+    clearCompletedEvent.call(this);
   };
 
-  updateIndex() {
-    this.collection.forEach((element, index) => {
-      element.index = index + 1;
-    });
-    return this.collection.length + 1;
-  }
+clearAll = () => {
+  this.collection = this.collection.filter((task) => !task.completed);
+  this.updateLocalStorage();
+  this.updateIndex();
+  this.renderTasks();
+}
 
-  init() {
-    this.bindEvents();
-    this.renderTasks();
-  }
+updateIndex() {
+  this.collection.forEach((element, index) => {
+    element.index = index + 1;
+  });
+  return this.collection.length + 1;
+}
+
+init() {
+  this.bindEvents();
+  this.renderTasks();
+}
 }
 
 export default ToDoList;

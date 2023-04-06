@@ -33,4 +33,29 @@ describe('ToDo', () => {
     todo.removeBook(0);
     expect(todo.collection.length).toBe(1);
   });
+
+  test('edit a task', () => {
+    todo.addBook('Task 1');
+    todo.addBook('Task 1');
+    const index = 1;
+    const description = 'new list';
+    todo.editBook(index, description);
+    expect(todo.collection[1].description).toBe('new list');
+  });
+
+  test('update completeed status', () => {
+    todo.addBook('Task 1');
+    todo.addBook('Task 1');
+    todo.collection[0].completed = true;
+    expect(todo.collection[0].completed).toBe(true);
+  });
+
+  test('clear All', () => {
+    todo.addBook('Task 1');
+    todo.addBook('Task 2');
+    todo.collection[0].completed = true;
+    todo.clearAll();
+    expect(todo.collection[0].description).toBe('Task 2');
+    expect(todo.collection.length).toBe(1);
+  });
 });
