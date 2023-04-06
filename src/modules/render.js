@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-// import { form, input } from './link.js';
+import { input } from './link.js';
 
 export class ToDoList {
   constructor() {
@@ -8,6 +8,7 @@ export class ToDoList {
       this.collection = [];
     }
     this.renderTasks();
+
     // form.addEventListener('submit', (event) => {
     //   event.preventDefault();
     //   this.addBook(input.value);
@@ -38,6 +39,14 @@ export class ToDoList {
     this.updateLocalStorage();
     this.renderTasks();
   };
+
+  submit = (form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.addBook(input.value);
+      input.value = '';
+    });
+  }
 
   renderTasks = () => {
     const toDoList = document.getElementById('to-do-list');
@@ -97,13 +106,15 @@ export class ToDoList {
         this.renderTasks();
       });
     });
-    // const clearAll = document.querySelector('.clear-completed');
-    // clearAll.addEventListener('click', () => {
-    //   this.collection = this.collection.filter((task) => !task.completed);
-    //   this.updateLocalStorage();
-    //   this.updateIndex();
-    //   this.renderTasks();
-    // });
+
+    const clearAll = document.querySelector('.clear-completed');
+    clearAll.addEventListener('click', () => {
+      this.collection = this.collection.filter((task) => !task.completed);
+      this.updateLocalStorage();
+      this.updateIndex();
+      this.renderTasks();
+    });
+
     const deleteIcons = document.querySelectorAll('.remove-icon');
     deleteIcons.forEach((deleteIcon) => {
       deleteIcon.addEventListener('click', () => {
@@ -124,4 +135,5 @@ export class ToDoList {
      return this.collection.length + 1;
    }
 }
+
 module.exports = ToDoList;

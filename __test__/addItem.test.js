@@ -1,11 +1,18 @@
 import ToDoList from '../src/modules/render.js';
 
-describe('toDoList', () => {
+describe('ToDoList', () => {
   let todoItem;
   const Taskdescription = 'something';
 
   beforeAll(() => {
-    document.body.innerHTML = '<ul id="to-do-list"></ul>';
+    document.body.innerHTML = `
+    <form class="add-submit">
+        <input placeholder="Add your task..." type="text">
+        <input type="submit" class="submit" value="" title="click this or press enter to submit">
+    </form>
+    <ul id="to-do-list"></ul>
+    <button class="clear-completed">Clear Completed</button>
+  `;
   });
 
   beforeEach(() => {
