@@ -7,9 +7,11 @@
 :root {
   --font-family: "Poppins", sans-serif;
   --font-family-styled: "Sacramento", cursive;
-  --Box-shadow-outside: -5px -5px 20px rgba(255, 255, 255, 0.849),
+  --Box-shadow-outside:
+    -5px -5px 20px rgba(255, 255, 255, 0.849),
     5px 5px 9px rgba(94, 104, 121, 0.3);
-  --Box-shadow-inside: inset -5px -5px 9px rgba(255, 255, 255, 0.647),
+  --Box-shadow-inside:
+    inset -5px -5px 9px rgba(255, 255, 255, 0.647),
     inset 5px 5px 9px rgba(94, 104, 121, 0.3);
 }
 
@@ -19,12 +21,10 @@ body {
 
 .main {
   box-shadow: var(--Box-shadow-outside);
-  width: 25%;
   height: 40%;
   padding: 10px 0;
   margin: 200px auto;
   width: 350px;
-  height: 40vh;
   border-top: 9px solid black;
   overflow: auto;
 }
@@ -32,7 +32,6 @@ body {
 .clear-completed {
   width: 100%;
   padding: 20px;
-  border: none;
   background: #f7f7f7;
   border: 1px solid #8f8e8e;
 }
