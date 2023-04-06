@@ -30,9 +30,7 @@ describe('ToDoList', () => {
   });
 
   test('remove item from list', () => {
-    todoItem.addBook(Taskdescription);
-    const bookIndex = todoItem.collection[0].index;
-    todoItem.removeBook(bookIndex);
-    expect(todoItem.collection[bookIndex]).toBeFalsy();
+    todoItem.removeBook(0);
+    expect(todoItem.collection).toEqual([]);
   });
 });
