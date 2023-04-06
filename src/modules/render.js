@@ -1,6 +1,6 @@
-import { form,input } from "./link";
+import { form, input } from './link.js';
 
-export class ToDoList {
+class ToDoList {
   constructor() {
     this.collection = JSON.parse(localStorage.getItem('taskCollection')) || [];
     if (!Array.isArray(this.collection) || this.collection.length === 0) {
@@ -19,7 +19,9 @@ export class ToDoList {
   };
 
   removeBook = (index) => {
-    this.collection = this.collection.filter((task, index1) => index1 !== index);
+    this.collection = this.collection.filter(
+      (task, index1) => index1 !== index,
+    );
     this.updateIndex();
     this.updateLocalStorage();
     this.renderTasks();
@@ -37,8 +39,12 @@ export class ToDoList {
     this.collection.forEach((task, index) => {
       const taskElement = `
         <li class='to-do-item'>
-          <input class='check-button'  data-index='${index}' type='checkbox' ${task.completed ? 'checked' : ''}>
-          <span class='task-description' data-index='${index}'>${task.description}</span>
+          <input class='check-button'  data-index='${index}' type='checkbox' ${
+        task.completed ? 'checked' : ''
+      }>
+          <span class='task-description' data-index='${index}'>${
+        task.description
+      }</span>
           <span class='fas fa-ellipsis-v menu-icon' data-mine='${index}'></span>
           <span class='fas fa-trash remove-icon hidden' data-index='${index}'></span>
         </li>
@@ -52,23 +58,25 @@ export class ToDoList {
       menuIcon.addEventListener('click', () => {
         // Get the index, task description, and remove icon associated with the menu icon
         const index = parseInt(menuIcon.dataset.mine, 10);
-        const taskDescription = document.querySelector(`[data-index='${index}'].task-description`);
-        const removeIcon = document.querySelector(`[data-index='${index}'].remove-icon`);
-    
+        const taskDescription = document.querySelector(
+          `[data-index='${index}'].task-description`,
+        );
+        const removeIcon = document.querySelector(
+          `[data-index='${index}'].remove-icon`,
+        );
+
         // Get the current task description and replace it with an empty input field
         const currentDescription = taskDescription.innerHTML;
         taskDescription.innerHTML = '';
         const inputField = document.createElement('input');
         inputField.classList.add('add-list');
         inputField.value = currentDescription;
-        
-        // Append the input field to the task description, set focus on it, and update the menu and remove icons
+
         taskDescription.appendChild(inputField);
         inputField.focus();
         menuIcon.classList.add('hidden');
         removeIcon.classList.remove('hidden');
-    
-        // When the user hits the "Enter" key, update the task description and call the editBook function
+
         inputField.addEventListener('keydown', (event) => {
           if (event.key === 'Enter') {
             const newDescription = inputField.value;
@@ -78,7 +86,7 @@ export class ToDoList {
         });
       });
     });
-    
+
     const checkBtn = document.querySelectorAll('.check-button');
     checkBtn.forEach((event) => {
       event.addEventListener('change', () => {
@@ -92,7 +100,7 @@ export class ToDoList {
     const clearAll = document.querySelector('.clear-completed');
     clearAll.addEventListener('click', () => {
       this.collection = this.collection.filter((task) => !task.completed);
-     this.updateLocalStorage();
+      this.updateLocalStorage();
       this.updateIndex();
       this.renderTasks();
     });
@@ -105,9 +113,9 @@ export class ToDoList {
     });
   };
 
-   updateLocalStorage = () => {
-     localStorage.setItem('taskCollection', JSON.stringify(this.collection));
-  }
+  updateLocalStorage = () => {
+    localStorage.setItem('taskCollection', JSON.stringify(this.collection));
+  };
 
   bindEvents = () => {
     form.addEventListener('submit', (event) => {
@@ -116,7 +124,7 @@ export class ToDoList {
       input.value = '';
       this.renderTasks();
     });
-  }
+  };
 
   updateIndex() {
     this.collection.forEach((element, index) => {
@@ -124,8 +132,11 @@ export class ToDoList {
     });
     return this.collection.length + 1;
   }
+
   init() {
     this.bindEvents();
     this.renderTasks();
   }
 }
+
+export default ToDoList;

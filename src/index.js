@@ -1,5 +1,5 @@
 import './style.css';
-import { ToDoList } from './modules/render.js';
+import ToDoList from './modules/render.js';
 
 const newToDo = new ToDoList();
 
