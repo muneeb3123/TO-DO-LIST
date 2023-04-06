@@ -28,7 +28,7 @@
 
 # 📖 [Protfolio-project] <a name="about-project"></a>
 
-In this project I create webpack server which shows my dynamically created lists in live server and also manage it.
+In this project I Use jest to test my two functions addBook and removeBook.
 
 ## 🛠 Built With <a name="visual studio">HTML5</a>
 
@@ -48,7 +48,7 @@ In this project I create webpack server which shows my dynamically created lists
 > Describe between 1-3 key features of the application.
 - **It has javascript es6**
 -**It has arrow functions**
--**It has javascript Classes**
+-**It has javascript Jest Test**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,6 +91,9 @@ Step 2: Locate the folder where you cloned your project to and open the `index.h
 - GitHub: [@muneeb3123](https://github.com/muneeb3123)
 - Twitter: [@Hafizabd4](https://twitter.com/Hafizabd4)
 - LinkedIn: (https://www.linkedin.com/in/muneeb-rehman-01b6bb193/)
+
+👤 **Daniela**
+- GitHub: [https://github.com/danielamoreno699)
 
 
 <!-- FUTURE FEATURES -->
