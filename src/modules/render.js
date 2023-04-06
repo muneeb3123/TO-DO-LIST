@@ -1,6 +1,6 @@
 // import { clearAllButton } from './checkBtn.js';
 import { form, input } from './link.js';
-import { clearCompletedEvent } from './checkBtn.js';
+import clearCompletedEvent from './checkBtn.js';
 
 class ToDoList {
   constructor() {

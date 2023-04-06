@@ -1,8 +1,9 @@
 const clearAll = document.querySelector('.clear-completed');
 
-// eslint-disable-next-line import/prefer-default-export
-export const clearCompletedEvent = () => {
-  clearAll.addEventListener('click', () => {
+function clearCompletedEvent() {
+  clearAll.addEventListener('click', function onClick() { /* eslint-disable-line prefer-arrow-callback */
     this.clearAll();
-  });
-};
+  }.bind(this));
+}
+
+export default clearCompletedEvent;
