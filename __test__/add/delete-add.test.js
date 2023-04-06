@@ -1,4 +1,5 @@
-import ToDoList from '../src/modules/render.js';
+// eslint-disable-next-line import/no-named-as-default
+import ToDoList from '../../src/modules/render.js';
 
 describe('ToDoList', () => {
   let todoItem;
@@ -7,9 +8,9 @@ describe('ToDoList', () => {
   beforeAll(() => {
     document.body.innerHTML = `
     <form class="add-submit">
-        <input placeholder="Add your task..." type="text">
-        <input type="submit" class="submit" value="" title="click this or press enter to submit">
-    </form>
+    <input placeholder="Add your task..." type="text">
+    <input type="submit" class="submit" value="" title="click this or press enter to submit">
+</form>
     <ul id="to-do-list"></ul>
     <button class="clear-completed">Clear Completed</button>
   `;

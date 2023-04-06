@@ -1,6 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-import { input, form } from './link.js';
-
 export class ToDoList {
   constructor() {
     this.collection = JSON.parse(localStorage.getItem('taskCollection')) || [];
@@ -8,22 +5,19 @@ export class ToDoList {
       this.collection = [];
     }
     this.renderTasks();
+    this.initForm();
+  }
+
+  initForm = () => {
+    const form = document.querySelector('.add-submit');
+    const input = document.querySelector('.add-list');
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       this.addBook(input.value);
       input.value = '';
     });
-  }
-
-  // submit = (form) => {
-  //     form.addEventListener('submit', (event) => {
-  //     event.preventDefault();
-  //     this.addBook(input.value);
-  //     input.value = '';
-  //   });
-
-  // }
+  };
 
   addBook = (Description) => {
     const newTask = {
@@ -48,14 +42,6 @@ export class ToDoList {
     this.updateLocalStorage();
     this.renderTasks();
   };
-
-  submit = (form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      this.addBook(input.value);
-      input.value = '';
-    });
-  }
 
   renderTasks = () => {
     const toDoList = document.getElementById('to-do-list');
