@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { input } from './link.js';
+import { input, form } from './link.js';
 
 export class ToDoList {
   constructor() {
@@ -9,12 +9,21 @@ export class ToDoList {
     }
     this.renderTasks();
 
-    // form.addEventListener('submit', (event) => {
-    //   event.preventDefault();
-    //   this.addBook(input.value);
-    //   input.value = '';
-    // });
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.addBook(input.value);
+      input.value = '';
+    });
   }
+
+  // submit = (form) => {
+  //     form.addEventListener('submit', (event) => {
+  //     event.preventDefault();
+  //     this.addBook(input.value);
+  //     input.value = '';
+  //   });
+
+  // }
 
   addBook = (Description) => {
     const newTask = {
@@ -136,4 +145,4 @@ export class ToDoList {
    }
 }
 
-module.exports = ToDoList;
+export default ToDoList;
