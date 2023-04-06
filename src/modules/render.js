@@ -129,17 +129,17 @@ clearAll = () => {
   this.renderTasks();
 }
 
-  updateIndex() {
-    this.collection.forEach((element, index) => {
-      element.index = index + 1;
-    });
-    return this.collection.length + 1;
-  }
+updateIndex() {
+  this.collection.forEach((element, index) => {
+    element.index = index + 1;
+  });
+  return this.collection.length + 1;
+}
 
-  init() {
-    this.bindEvents();
-    this.renderTasks();
-  }
+init() {
+  this.bindEvents();
+  this.renderTasks();
+}
 }
 
 export default ToDoList;

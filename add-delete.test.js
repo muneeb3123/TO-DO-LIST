@@ -50,4 +50,12 @@ describe('ToDo', () => {
     expect(todo.collection[0].completed).toBe(true);
   });
 
+  test('clear All', () => {
+    todo.addBook('Task 1');
+    todo.addBook('Task 2');
+    todo.collection[0].completed = true;
+    todo.clearAll();
+    expect(todo.collection[0].description).toBe('Task 2');
+    expect(todo.collection.length).toBe(1);
+  });
 });
